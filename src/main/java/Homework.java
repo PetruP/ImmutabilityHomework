@@ -3,28 +3,37 @@ import java.util.List;
 public class Homework {
 
     public static void main(String[] args) {
-        immutableProject();
+        immutableProduct();
     }
 
-    private static void immutableProject() {
-        Project project = Project.Builder.project()
+    private static void immutableProduct() {
+        Product product = Product.Builder.product()
                 .name("Marius")
                 .price(120)
                 .build();
-        Project project2 = Project.Builder.project()
+        Product product2 = Product.Builder.product()
                 .description("asafasf")
                 .category("CLOTHES")
                 .category("FOOD")
                 .category("ELECTRONICS")
                 .category("DYI")
                 .build();
-        Project project3 = Project.Builder.project()
+        Product product3 = Product.Builder.product()
                 .description("fafsfgg")
                 .categories(List.of(Category.CLOTHES, Category.ELECTRONICS))
                 .build();
-        System.out.println(project.toString());
-        System.out.println(project2.toString());
-        System.out.println(project3.toString());
+        System.out.println(product.toString());
+        System.out.println(product2.toString());
+        System.out.println(product3.toString());
+
+        ProductReCreated productReCreated = ProductReCreated.Builder.product()
+                .description("recreated project")
+                .price(100)
+                .name("recreated")
+                .category("CLOTHES")
+                .category("FOOD")
+                .build();
+        System.out.println(productReCreated.toString());
     }
 
 }
